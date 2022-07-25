@@ -1,0 +1,181 @@
+Index: css/style.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- css/style.css	(date 1652798815149)
++++ css/style.css	(date 1652798815149)
+@@ -59,7 +59,7 @@
+   overflow: hidden;
+ }
+ .navbar-menu-list {
+-  margin: auto 0 auto 100px;
++  margin: auto 0 auto 150px;
+   display: flex;
+   list-style: none;
+ }
+@@ -135,6 +135,7 @@
+ .submenu {
+   position: absolute;
+   /*visibility: hidden;*/
++  display: flex;
+   flex-direction: column;
+   transition-duration: 0.5s;
+   display: none;
+@@ -166,9 +167,7 @@
+   opacity: 1;
+   display: block;
+ }
+-.menu-item-our-solutions .title {
+-  pointer-events: none;
+-}
++
+ .navbar-menu-list > .fas {
+   position: relative;
+   font-weight: 900;
+@@ -296,7 +295,7 @@
+   justify-content: flex-start;
+   flex-direction: column;
+   margin: 0;
+-  padding: 0 20px;
++  padding: 0 20px 0 0;
+   flex-wrap: wrap;
+ }
+ .text-list-wrapper li {
+@@ -1336,7 +1335,7 @@
+ 		   left: 130px;
+ 		}
+ 	  }
+-	
++
+   } */
+ 
+ .homepage-blog {
+@@ -1876,7 +1875,7 @@
+ 
+ /* .background-image-2-big-div-info {
+ 	position: absolute;
+-	top: 50px; 
++	top: 50px;
+ 	left: 50%;
+ 	transform: translateX(-50%);
+ } */
+@@ -1935,7 +1934,7 @@
+ 
+ .container {
+   width: 90%;
+-  padding: 0;
++  padding: 0 15px;
+   margin: 0 auto;
+ }
+ .footer .footer-texts .footer-btn .footer-social-media {
+@@ -2132,11 +2131,11 @@
+   }
+   .contact-us-form {
+     width: 320px;
+-    padding: 40px 0;
++    padding: 40px 0 40px 10px;
+   }
+ 
+   .footer {
+-    margin: 10px 8px;
++    margin: 10px;
+     position: absolute;
+     width: 95%;
+   }
+@@ -2162,7 +2161,7 @@
+     width: 170px;
+     height: 45px;
+     padding: 0;
+-    margin: 9px 10px 0;
++    margin: 9px 10px 0 25px;
+   }
+ 
+   .navbar-mobile-container {
+@@ -2178,7 +2177,7 @@
+   }
+ 
+   .partners-clients {
+-    padding: 90px 0 20px;
++    padding: 90px 0 20px 40px;
+   }
+ 
+   .do-marketing-smarter-image {
+@@ -2256,9 +2255,10 @@
+   }
+   .contact-form-div > .container {
+     padding-top: 35px;
++    padding-left: 10px;
+   }
+   .partners-clients .container {
+-    padding: 0;
++    padding: 0 15px 0 0;
+   }
+   .unique-div .container .unique-div-info h2 {
+     font-size: 35px;
+@@ -2329,22 +2329,16 @@
+   }
+   .mobile-container .menu-button-container {
+     display: flex;
+-    width: 15%;
++    width: 35%;
+     right: 0;
+     top: 3px;
+     position: absolute;
+-    padding-right: 0;
++    padding-right: 10px;
+   }
+   .navbar-mobile-container .menu.active {
+     display: block;
+     top: 20px;
+-    width: 100%;
+-  }
+-  .text-list-wrapper > ul {
+-    padding: 0 7px;
+-  }
+-  .text-list-wrapper > ul > li{
+-    text-align: left;
++    width: 80%;
+   }
+ }
+ @media screen and (min-width: 501px) and (max-width: 768px) {
+@@ -2378,7 +2372,7 @@
+   }
+   .mobile-container .menu-button-container {
+     display: flex;
+-    width: 10%;
++    width: 35%;
+     right: 0;
+     top: 3px;
+     position: absolute;
+@@ -2386,13 +2380,7 @@
+   .navbar-mobile-container .menu.active {
+     display: block;
+     top: 20px;
+-    width: 100%;
+-  }
+-  .text-list-wrapper > ul {
+-    padding: 0 7px;
+-  }
+-  .text-list-wrapper > ul > li{
+-    text-align: left;
++    width: 82%;
+   }
+ }
+ @media screen and (min-width: 577px) and (max-width: 768px) {
+@@ -3882,13 +3870,13 @@
+     border-bottom: 1px solid #444;
+   }
+   .unique-div {
+-    margin: 0;
++    margin: 0 0 0 10px;
+   }
+   .logos {
+     margin: 0;
+   }
+   .hp-main-service {
+-    height: 115px;
++    height: fit-content;
+   }
+   .homepage-main-services h3 {
+     font-size: 33px;
