@@ -705,7 +705,8 @@ footer .footer-body .footer-data-list .footer-data-item a:hover {
     font-size: 18px;
   }
   .section h1,
-  .section h2 {
+  .section h2,
+  .section h3 {
     font-size: 45px;
   }
   .section .oriented-services-wrapper h3 {
