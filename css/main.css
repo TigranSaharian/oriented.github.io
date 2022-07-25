@@ -1,6 +1,6 @@
-@import url('css/oriented-color.css');
-@import url('css/oriented-font-size.css');
-@import url('css/oriented-root.css');
+@import url('oriented-color.css');
+@import url('oriented-font-size.css');
+@import url('oriented-root.css');
 body {
   font-family: "Poppins", roboto, arial;
   margin: 0;
