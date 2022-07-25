@@ -135,10 +135,19 @@ window.onload = () => {
     anchor.addEventListener("click", (e) => {
       e.preventDefault();
       let target = e.target.href;
+      if(!target){
+        for (let index = 0; index < e.path.length; index++) {
+          const element = e.path[index];
+          if(element.tagName == 'A'){
+            target = element.href; 
+            break;
+          }
+        }
+      }
       transition_el.classList.add("is-active");
-      setTimeout(() => {
-        window.location.href = target;
-      }, 300);
+      window.location.href = target;
+      // setTimeout(() => {
+      // }, 200);
     });
   }
 
@@ -146,7 +155,7 @@ window.onload = () => {
     transition_el.classList.remove("is-active");
     header.classList.remove("deactivate");
     main.classList.remove('deactivate');
-  }, 300);
+  }, 200);
 };
 
 const words = ["More", "Fast", "Better"];
