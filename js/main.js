@@ -40,7 +40,7 @@ fetch("./footer.html")
     return response.text();
   })
   .then((data) => {
-    document.body.innerHTML += data;
+    document.querySelector("footer").innerHTML = data;
   })
   .catch((err) => {
     console.log(err.message);
