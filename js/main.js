@@ -6,14 +6,17 @@
   };*/
 
 //   alert("**")
-let currentPage = location.pathname.split('/')[1];
+let currentPagePathArr = location.pathname.split('/');
+let currentPage = location.pathname.split('/')[currentPagePathArr.length - 1];
 window.addEventListener('load', function () {
   let element = document.getElementsByClassName("nav-items");
   let listElements = document.getElementsByClassName("nav-items-list");
   let arr = [];
+  let newElementsArr;
   let newElements;
   for (let i = 0; i < element.length; i++) {
-    newElements = (element[i].href.split('/')[3]);
+    newElementsArr = element[i].href.split('/');
+    newElements = (newElementsArr[newElementsArr.length - 1]);
     arr = arr.concat(newElements);
   }
   
