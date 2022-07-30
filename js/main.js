@@ -6,23 +6,22 @@
   };*/
 
 //   alert("**")
-let currentPage = location.pathname.split('/')[2];
-
+let currentPage = location.pathname.split('/')[1];
 window.addEventListener('load', function () {
   let element = document.getElementsByClassName("nav-items");
   let listElements = document.getElementsByClassName("nav-items-list");
   let arr = [];
   let newElements;
   for (let i = 0; i < element.length; i++) {
-    newElements = (element[i].href.split('/')[4]);
+    newElements = (element[i].href.split('/')[3]);
     arr = arr.concat(newElements);
   }
+  
   for (let i = 0; i < arr.length; i++) {
     if (currentPage === arr[i]) {
       listElements[i].classList.add('active');
+    }
   }
-}
-
 });
 
 fetch("./header.html")
@@ -145,9 +144,9 @@ window.onload = () => {
         }
       }
       transition_el.classList.add("is-active");
-      window.location.href = target;
-      // setTimeout(() => {
-      // }, 200);
+      setTimeout(() => {
+        window.location.href = target;
+      }, 200);
     });
   }
 
