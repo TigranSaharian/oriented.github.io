@@ -1,14 +1,13 @@
-// var webDesign = document.getElementById('web-design')
-
-// console.log(webDesign);
-/*document.getElementById('web-design').onmouseover = function() {
-    console.log("***");
-  };*/
-
-//   alert("**")
 let currentPagePathArr = location.pathname.split('/');
 let currentPage = location.pathname.split('/')[currentPagePathArr.length - 1];
-window.addEventListener('load', function () {
+let i = 0;
+
+window.onload = () => {
+  getMobileMenuActiveUrl();
+  getPassPageEffect();
+};
+
+getMobileMenuActiveUrl = () =>{
   let element = document.getElementsByClassName("nav-items");
   let listElements = document.getElementsByClassName("nav-items-list");
   let arr = [];
@@ -25,108 +24,9 @@ window.addEventListener('load', function () {
       listElements[i].classList.add('active');
     }
   }
-});
-
-fetch("./header.html")
-  .then((response) => {
-    return response.text();
-  })
-  .then((data) => {
-    document.querySelector("header").innerHTML = data;
-  })
-  .catch((err) => {
-    console.log(err.message);
-  });
-fetch("./footer.html")
-  .then((response) => {
-    return response.text();
-  })
-  .then((data) => {
-    document.querySelector("footer").innerHTML = data;
-  })
-  .catch((err) => {
-    console.log(err.message);
-  });
-
-// List of sentences
-var _CONTENT = ["Easier", "Faster", "Better!"];
-
-// Current sentence being processed
-var _PART = 0;
-
-// Character number of the current sentence being processed
-var _PART_INDEX = 0;
-
-// Holds the handle returned from setInterval
-var _INTERVAL_VAL;
-
-// Element that holds the text
-var _ELEMENT = document.querySelector("#text");
-
-// Implements typing effect
-/*function Type() {
-	var text =  _CONTENT[_PART].substring(0, _PART_INDEX + 1);
-	_ELEMENT.innerHTML = text;
-	_PART_INDEX++;
-
-	// If full sentence has been displayed then start to delete the sentence after some time
-	if(text === _CONTENT[_PART]) {
-		clearInterval(_INTERVAL_VAL);
-		setTimeout(function() {
-			_INTERVAL_VAL = setInterval(Delete, 50);
-		}, 1500);
-	}
-}*/
-
-// Implements deleting effect
-function Delete() {
-  var text = _CONTENT[_PART].substring(0, _PART_INDEX - 1);
-  _ELEMENT.innerHTML = text;
-  _PART_INDEX--;
-
-  // If sentence has been deleted then start to display the next sentence
-  if (text === "") {
-    clearInterval(_INTERVAL_VAL);
-
-    // If last sentence then display the first one, else move to the next
-    if (_PART == _CONTENT.length - 1) _PART = 0;
-    else _PART++;
-    _PART_INDEX = 0;
-
-    // Start to display the next sentence after some time
-    setTimeout(function () {
-      _INTERVAL_VAL = setInterval(Type, 100);
-    }, 200);
-  }
 }
 
-// Start the typing effect on load
-/*
-_INTERVAL_VAL = setInterval(Type, 100);
-*/
-
-function myFunction() {
-  document.getElementById("myLinks").classList.toggle("active");
-}
-
-// let companyClick = () => {
-//   let element = document.getElementById("myCompany");
-//   element.classList.toggle("active");
-// };
-
-let removeLoadEffect = () => {
-  let element = document.getElementById("transition_section");
-  setTimeout(() => {
-    element.classList.remove("is-active");
-  }, 500)
-};
-
-// let socialClick = () => {
-//   let element = document.getElementById("mySocial");
-//   element.classList.toggle("active");
-// };
-
-window.onload = () => {
+getPassPageEffect = () => {
   const transition_el = document.getElementById("transition_section");
   const main = document.getElementById('main');
   const anchors = document.querySelectorAll("a");
@@ -138,6 +38,7 @@ window.onload = () => {
       e.preventDefault();
       let target = e.target.href;
       if(!target){
+        console.log(target);
         for (let index = 0; index < e.path.length; index++) {
           const element = e.path[index];
           if(element.tagName == 'A'){
@@ -157,49 +58,85 @@ window.onload = () => {
     transition_el.classList.remove("is-active");
     header.classList.remove("deactivate");
     main.classList.remove('deactivate');
-  }, 200);
+  }, 400);
+}
+
+(getHeader = () => {
+  fetch("./header.html")
+    .then((response) => {
+      return response.text();
+    })
+    .then((data) => {
+      document.querySelector("header").innerHTML = data;
+    })
+    .catch((err) => {
+      console.log(err.message);
+      setTimeout(() => {
+        getHeader();
+      }, 2000);
+    });
+})();
+
+(getFooter = () => {
+  fetch("./footer.html")
+    .then((response) => {
+      return response.text();
+    })
+    .then((data) => {
+      document.querySelector("footer").innerHTML = data;
+    })
+    .catch((err) => {
+      console.log(err.message);
+      setTimeout(() => {
+        getFooter();
+      }, 2000);
+    });
+})()
+
+toggleMenu = () => {
+  document.getElementById("myLinks").classList.toggle("active");
+}
+
+removeLoadEffect = () => {
+  let element = document.getElementById("transition_section");
+  setTimeout(() => {
+    element.classList.remove("is-active");
+  }, 500)
 };
 
-const words = ["More", "Fast", "Better"];
-let i = 0;
-let timer;
-
-function typingEffect() {
+typingEffect = (words) => {
   let word = words[i].split("");
-  let ourWord = document.getElementById("word");
+  let wordElement = document.getElementById("word");
   let loopTyping = function () {
-    if (ourWord && word.length > 0) {
-      ourWord.innerHTML += word.shift();
+    if (wordElement && word.length > 0) {
+      wordElement.innerHTML += word.shift();
     } else {
-      setTimeout(deletingEffect, 1000);
+      setTimeout(() => {
+        deletingEffect(words, wordElement);
+      }, 1000);
       return false;
     }
-    timer = setTimeout(loopTyping, 100);
+    setTimeout(loopTyping, 100);
   };
   loopTyping();
 }
 
-function deletingEffect() {
+deletingEffect = (words, wordElement) => {
   let word = words[i].split("");
-  let ourWord = document.getElementById("word");
   let loopDeleting = function () {
-    if (ourWord && word.length > 0) {
+    if (wordElement && word.length > 0) {
       word.pop();
-      ourWord.innerHTML = word.join("");
+      wordElement.innerHTML = word.join("");
     } else {
       if (words.length > i + 1) {
         i++;
       } else {
         i = 0;
       }
-      typingEffect();
+      typingEffect(words);
       return false;
     }
-    timer = setTimeout(loopDeleting, 100);
+    setTimeout(loopDeleting, 100);
   };
   loopDeleting();
 }
-
-typingEffect();
-
-
