@@ -1,0 +1,42 @@
+<html>
+    <body>
+        <form class="contact-us-form" id="form">
+            <div class="form-item-wrapper" data-validate="Name is required">
+                <label for="fomrName">Name</label>
+                <input class="form-input" id="fomrName" type="text" name="name" placeholder="Enter your name">
+            </div>
+            <div class="form-item-wrapper" data-validate="Email is required">
+                <label for="fomrEmail">Email</label>
+                <input class="form-input" id="fomrEmail" type="email" name="email" placeholder="Enter your Email">
+            </div>
+            <div class="form-item-wrapper" data-validate="Website is required">
+                <label for="fomrWebsite">Website</label>
+                <input class="form-input" id="fomrWebsite" type="url" name="website" placeholder="Enter your Website">
+            </div>
+            <div class="form-item-wrapper">
+                <label for="formService">Service</label>
+                <select class="form-select" id="formService" title="service">
+                    <option value="SEO Services" selected>SEO Services</option>
+                    <option value="SMM Services">SMM Services</option>
+                    <option value="PPC Services">PPC Services</option>
+                    <option value="Digital Consultancy">Digital Consultancy</option>
+                </select>
+            </div>
+            <div class="form-item-wrapper">
+                <label for="formBudget">Budget</label>
+                <select class="form-select" id="formBudget" title="budget">
+                    <option value="<900%" selected><900$</option>
+                    <option value="1500$">1500$</option>
+                    <option value="$3500">$3500</option>
+                    <option value="$5000">$5000</option>
+                    <option value="$9000+">$9000+</option>
+                </select>
+            </div>
+            <div class="form-item-wrapper" data-validate="Message is required">
+                <label for="foemMessage">Message</label>
+                <textarea class="message" id="foemMessage" name="message" placeholder="Your message here..." rows="4"></textarea>
+            </div>
+            <button type="button" id="submitForm" class="button default-button blue-hover-button my-3">Submit</button>
+        </form>
+    </body>
+</html>

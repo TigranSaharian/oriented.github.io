@@ -7,6 +7,48 @@ window.onload = () => {
   getPassPageEffect();
 };
 
+let addSubmitFormEvent = () => {
+  document.getElementById('submitForm')?.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    const form = document.getElementById('form');
+    let formData = new FormData();
+    let formInputs = form.querySelectorAll('.form-input');
+    for (let index = 0; index < formInputs.length; index++) {
+      const input = formInputs[index];
+      input.value && formData.append(input.name, input.value);
+    }
+  
+    let selectElemets = document.querySelectorAll('select');
+    for (let index = 0; index < selectElemets.length; index++) {
+      const select = selectElemets[index];
+      const option = select.options[select.selectedIndex];
+      if(option.selected){
+        formData.append(select.title, option.value);
+      }
+    }
+  
+    const message = document.querySelector('textarea');
+    message.value && formData.append(message.name, message.value);
+  
+    for (const pair of formData.entries()) {
+      console.log(`${pair[0]}: ${pair[1]}`);
+    }
+
+    formData && sendMail(formData);
+  })
+}
+
+const sendMail = (mail) => {
+  fetch("/send", {
+    method: "post", //2.
+    body: mail, //3.
+
+  }).then((response) => {
+    return response.json();
+  });
+};
+
 getMobileMenuActiveUrl = () =>{
   let element = document.getElementsByClassName("nav-items");
   let listElements = document.getElementsByClassName("nav-items-list");
@@ -91,7 +133,23 @@ getPassPageEffect = () => {
         getFooter();
       }, 2000);
     });
-})()
+})();
+
+(getContactUs = () => {
+  fetch("./_contact-us.html")
+  .then((response) => {
+    return response.text();
+  })
+  .then((data) => {
+    document.getElementById("contactUs").innerHTML = data;
+    addSubmitFormEvent();
+  })
+  .catch((err) => {
+    setTimeout(() => {
+      getContactUs();
+    }, 2000);
+  });
+})();
 
 toggleMenu = () => {
   document.getElementById("myLinks").classList.toggle("active");
