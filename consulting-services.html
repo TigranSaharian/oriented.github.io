@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="here must to be text about the our consulting services">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap">
@@ -186,7 +192,46 @@
                         <p>Please enter the information below and we’ll get right back to you.</p>
                     </div>
                 </div>
-                <div id="contactUs"></div>
+                <form class="contact-us-form">
+                    <div class="form-item-wrapper" data-validate="Name is required">
+                        <label for="fomrName">Name</label>
+                        <input class="form-input" id="fomrName" type="text" name="name" placeholder="Enter your name">
+                    </div>
+                    <div class="form-item-wrapper" data-validate="Email is required">
+                        <label for="fomrEmail">Email</label>
+                        <input class="form-input" id="fomrEmail" type="email" name="name" placeholder="Enter your Email">
+                    </div>
+                    <div class="form-item-wrapper" data-validate="Website is required">
+                        <label for="fomrWebsite">Website</label>
+                        <input class="form-input" id="fomrWebsite" type="url" name="name" placeholder="Enter your Website">
+                    </div>
+                    <div class="form-item-wrapper">
+                        <label for="formService">Service</label>
+                        <select class="form-select" id="formService">
+                            <option>Choose Your Service</option>
+                            <option>SEO Services</option>
+                            <option>SMM Services</option>
+                            <option>PPC Services</option>
+                            <option>Digital Consultancy</option>
+                        </select>
+                    </div>
+                    <div class="form-item-wrapper">
+                        <label for="formBudget">Budget</label>
+                        <select class="form-select" id="formBudget">
+                            <option>Choose Your Budget</option>
+                            <option><900$</option>
+                            <option>1500$</option>
+                            <option>$3500</option>
+                            <option>$5000</option>
+                            <option>$9000+</option>
+                        </select>
+                    </div>
+                    <div class="form-item-wrapper" data-validate="Message is required">
+                        <label for="foemMessage">Message</label>
+                        <textarea class="message" id="foemMessage" name="message" placeholder="Your message here..." rows="4"></textarea>
+                    </div>
+                    <button class="button default-button blue-hover-button my-3">Submit</button>
+                </form>
             </div>
         </section>
     </div>
