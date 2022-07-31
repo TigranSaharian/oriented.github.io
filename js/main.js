@@ -136,7 +136,7 @@ getPassPageEffect = () => {
 })();
 
 (getContactUs = () => {
-  fetch("./_contact-us.html")
+  fetch("./contact-us-template.html")
   .then((response) => {
     return response.text();
   })
