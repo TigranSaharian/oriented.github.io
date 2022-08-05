@@ -4,7 +4,16 @@ let i = 0;
 
 window.onload = () => {
   getMobileMenuActiveUrl();
-  getPassPageEffect();
+  /* 
+    ------- WARNING!!! ----------------------------------------------
+    befor adding pagge pass effect add to all pages this tag:
+      <div id="transition_section" class="transition transition-1 is-active"></div>
+    
+    and "deactivate" class to header and main div
+      <header class="deactivate"></header>
+      <div id="main" class="deactivate">...</div>
+  */
+  //getPassPageEffect();
 };
 
 let addSubmitFormEvent = () => {

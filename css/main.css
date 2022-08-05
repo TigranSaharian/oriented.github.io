@@ -6,6 +6,7 @@ body {
   font-family: "Poppins", roboto, arial;
   margin: 0;
   padding: 0;
+  font-size: 17px;
 }
 ::-webkit-scrollbar {
   width: 15px;
@@ -22,10 +23,12 @@ body {
 h1 {
   color: var(--oriented-dark-color);
   font-weight: 900;
+  line-height: 1.1;
 }
 h2 {
   color: var(--oriented-dark-color);
   font-weight: 900;
+  line-height: 1.1;
 }
 h3 {
   color: var(--oriented-dark-color);
@@ -363,7 +366,7 @@ header .navbar-menu-list > ul li {
   font-weight: bold;
 }
 header .navbar-menu-list li:not(:last-child) {
-  padding-right: 25px;
+  padding-right: 23px;
 }
 header .navbar-menu-list li {
   padding: 10px 15px 10px 0;
@@ -431,7 +434,10 @@ header.deactivate {
 .section .section-white-title {
   color: var(--oriented-white-color);
 }
-.section .image-texts p {
+.section .image-texts p,
+.section .image-texts .cover-text {
+  font-size: 16px;
+  font-weight: 500;
   color: var(--oriented-dark-color);
   line-height: 1.8;
   margin: 15px 0;

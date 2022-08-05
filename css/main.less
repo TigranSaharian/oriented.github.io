@@ -8,6 +8,7 @@ body {
   font-family: "Poppins", roboto, arial;
   margin: 0;
   padding: 0;
+  font-size: 17px;
 }
 
 ::-webkit-scrollbar {
@@ -29,11 +30,13 @@ body {
 h1 {
   color: var(--oriented-dark-color);
   font-weight: 900;
+  line-height: 1.1;
 }
 
 h2 {
   color: var(--oriented-dark-color);
   font-weight: 900;
+  line-height: 1.1;
 }
 
 h3 {
@@ -415,7 +418,7 @@ header {
     } 
     
     li:not(:last-child) {
-      padding-right: 25px;
+      padding-right: 23px;
     }
     
     li{
@@ -494,7 +497,9 @@ header.deactivate {
     color: var(--oriented-white-color);
   }
   .image-texts{
-    p{
+    p, .cover-text{
+      font-size: 16px;
+      font-weight: 500;
       color: var(--oriented-dark-color);
       line-height: 1.8;
       margin: 15px 0;
