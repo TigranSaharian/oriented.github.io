@@ -941,7 +941,7 @@ footer .footer-body .footer-data-list .footer-data-item a:hover {
   .section h1 {
     font-size: 45px;
   }
-  .section h2 {
+  .section .section-title {
     font-size: 40px;
   }
   .section .oriented-services-wrapper h3 {
@@ -1111,7 +1111,7 @@ footer .footer-body .footer-data-list .footer-data-item a:hover {
   .section h1 {
     font-size: 35px;
   }
-  .section h2 {
+  .section .section-title {
     font-size: 30px;
   }
   .section p {
