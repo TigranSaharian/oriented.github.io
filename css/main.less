@@ -44,6 +44,10 @@ h3 {
   font-weight: 900;
 }
 
+h1,h2,h3{
+  text-transform: capitalize;
+}
+
 button,
 input[type="button"],
 input[type="submit"],
@@ -671,12 +675,11 @@ header.deactivate {
       flex-flow: row wrap;
       .top-stats,
       .bottom-stats{
-        padding: 25px;
         flex: 45%;
         text-align: center;
         height: 180px;
         p{
-          font-size: var(--font-size-12);
+          font-size: var(--font-size-14);
         }
         i{
           font-size: var(--font-size-20);
@@ -1045,10 +1048,10 @@ footer {
       font-size: var(--font-size-18);
     }
     h1{
-      font-size: 45px;
+      font-size: 50px;
     }
     .section-title{
-      font-size: 40px;
+      font-size: 45px;
     }
     .oriented-services-wrapper{
       h3{
@@ -1090,12 +1093,9 @@ footer {
           
           .top-stats,
           .bottom-stats{
-            padding: 25px;
-            flex: 45%;
-            text-align: center;
-            height: 180px;
+            padding: 15px 25px;
             p{
-              font-size: var(--font-size-12);
+              font-size: var(--font-size-16);
             }
             i{
               font-size: var(--font-size-20);
@@ -1188,12 +1188,9 @@ footer {
     h1{
       font-size: 65px;
     }
-    h2{
+    .section-title{
       font-size: 60px;
     }
-    // .section-title{
-    //   font-size: 65px;
-    // }
     .oriented-services-wrapper{
       h3{
         font-size: 55px;
@@ -1221,7 +1218,7 @@ footer {
       .top-stats:nth-child(3){
         border-bottom: none;
       }
-      
+
       .top-stats{
         border-right: 1px solid var(--oriented-dark-color);
       }
@@ -1323,6 +1320,11 @@ footer {
           .bottom-stats:nth-child(1),
           .bottom-stats:nth-child(3){
             border-right: 1px solid var(--oriented-dark-color);
+          }
+
+          .top-stats,
+          .bottom-stats{
+            padding: 25px;
           }
         }
       }
