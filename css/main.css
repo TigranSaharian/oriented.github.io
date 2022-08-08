@@ -104,6 +104,10 @@ input[type="reset"]:hover,
 .text-orange {
   color: var(--oriented-orange-color) !important;
 }
+.card {
+  border-radius: var(--oriented-border-radius-10);
+  overflow: hidden;
+}
 .card .blog-image {
   width: 100%;
   height: 200px;
