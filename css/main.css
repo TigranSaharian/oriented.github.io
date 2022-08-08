@@ -104,6 +104,40 @@ input[type="reset"]:hover,
 .text-orange {
   color: var(--oriented-orange-color) !important;
 }
+.card .blog-image {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.card .card-body {
+  padding: 2rem;
+}
+.card .card-body .card-title {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+.card .card-body .card-title span {
+  font-weight: 500;
+  font-size: var(--font-size-14);
+  margin-right: 5px;
+  opacity: 0.6;
+}
+.card .card-body p {
+  font-weight: 500;
+}
+.card .card-body a {
+  color: var(--oriented-blue-color);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 600;
+}
+.card .card-body a i {
+  margin-left: 10px;
+}
 .transition-1 {
   position: fixed;
   top: 0;
@@ -889,7 +923,7 @@ footer .footer-body .footer-data-list .footer-data-item a:hover {
     max-width: 400px;
   }
   .section .section-image-wrapper .image-max-content {
-    max-width: 100%;
+    max-width: 450px;
   }
   .section .section-image-wrapper.oriented-right {
     justify-content: right !important;
@@ -900,8 +934,11 @@ footer .footer-body .footer-data-list .footer-data-item a:hover {
   .section p {
     font-size: var(--font-size-18);
   }
-  .section .section-title {
+  .section h1 {
     font-size: 45px;
+  }
+  .section h2 {
+    font-size: 40px;
   }
   .section .oriented-services-wrapper h3 {
     font-size: var(--font-size-40);
@@ -998,8 +1035,11 @@ footer .footer-body .footer-data-list .footer-data-item a:hover {
   }
 }
 @media (min-width: 992px) {
-  .section .section-title {
+  .section h1 {
     font-size: 65px;
+  }
+  .section h2 {
+    font-size: 60px;
   }
   .section .oriented-services-wrapper h3 {
     font-size: 55px;
@@ -1064,8 +1104,11 @@ footer .footer-body .footer-data-list .footer-data-item a:hover {
   .section .section-image-wrapper {
     padding: 20px 0;
   }
-  .section .section-title {
+  .section h1 {
     font-size: 35px;
+  }
+  .section h2 {
+    font-size: 30px;
   }
   .section p {
     font-size: var(--font-size-16);
