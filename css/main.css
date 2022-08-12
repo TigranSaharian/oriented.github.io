@@ -358,7 +358,7 @@ header .navbar-mobile-container .mobile-container .menu {
   width: 100%;
   padding: 0 15px;
   z-index: 9999;
-  top: calc(50% + 30px);
+  top: 50%;
   transform: translateY(-50%);
 }
 header .navbar-mobile-container .mobile-container .social-media-wrap {
