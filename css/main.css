@@ -614,7 +614,7 @@ header.deactivate {
 }
 .choose-us-section .choose-us-section-wrapper .stats .top-stats h4,
 .choose-us-section .choose-us-section-wrapper .stats .bottom-stats h4 {
-  font-size: var(--font-size-40);
+  font-size: var(--font-size-38);
   font-weight: 600;
   line-height: 1.5;
 }
@@ -949,7 +949,7 @@ footer .footer-body .footer-data-list .footer-data-item a:hover {
     font-size: 45px;
   }
   .section .oriented-services-wrapper h3 {
-    font-size: var(--font-size-40);
+    font-size: var(--font-size-38);
   }
   .section .text-list-wrapper {
     padding: 25px 30px;
@@ -990,7 +990,7 @@ footer .footer-body .footer-data-list .footer-data-item a:hover {
   }
   .section .choose-us-section .choose-us-section-wrapper .stats .top-stats h4,
   .section .choose-us-section .choose-us-section-wrapper .stats .bottom-stats h4 {
-    font-size: var(--font-size-40);
+    font-size: var(--font-size-38);
     font-weight: 600;
     line-height: 1.5;
   }
@@ -1113,7 +1113,7 @@ footer .footer-body .footer-data-list .footer-data-item a:hover {
     font-size: 35px;
   }
   .section .section-title {
-    font-size: 30px;
+    font-size: 38px;
   }
   .section p {
     font-size: var(--font-size-16);
